@@ -15,11 +15,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 glass-effect">
+    <header className="fixed top-0 w-full z-50 glass-effect" data-aos="fade-down">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3" data-aos="fade-right" data-aos-delay="100">
             <div className="relative">
               <Brain className="h-8 w-8 text-accent animate-pulse-slow" />
               <div className="absolute inset-0 h-8 w-8 bg-accent rounded-full blur-md opacity-30 animate-glow"></div>
@@ -28,12 +28,14 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
-            {navigation.map((item) => (
+          <nav className="hidden md:flex space-x-8" data-aos="fade-down" data-aos-delay="200">
+            {navigation.map((item, index) => (
               <a
                 key={item.name}
                 href={item.href}
                 className="text-white hover:text-accent transition-colors duration-300 relative group"
+                data-aos="fade-down"
+                data-aos-delay={300 + index * 100}
               >
                 {item.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-accent transition-all duration-300 group-hover:w-full"></span>
@@ -42,7 +44,7 @@ const Header = () => {
           </nav>
 
           {/* CTA Button */}
-          <div className="hidden md:block">
+          <div className="hidden md:block" data-aos="fade-left" data-aos-delay="300">
             <Button className="bg-accent hover:bg-accent/90 text-primary font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105">
               Get Started
             </Button>

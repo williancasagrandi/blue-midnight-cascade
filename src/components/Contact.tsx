@@ -57,7 +57,7 @@ const Contact = () => {
       <div className="absolute bottom-20 left-20 w-48 h-48 bg-primary/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
             Let's Build the <span className="text-gradient">Future</span> Together
           </h2>
@@ -69,7 +69,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Contact Form */}
-          <div className="glass-effect p-8 rounded-2xl">
+          <div className="glass-effect p-8 rounded-2xl" data-aos="fade-right" data-aos-delay="200">
             <h3 className="text-2xl font-bold text-white mb-6">Start Your Project</h3>
             
             {isSubmitted ? (
@@ -152,7 +152,7 @@ const Contact = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div className="space-y-8" data-aos="fade-left" data-aos-delay="400">
             <div>
               <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
               <p className="text-blue-100 leading-relaxed">
@@ -167,6 +167,8 @@ const Contact = () => {
                 <div
                   key={index}
                   className="flex items-start space-x-4 glass-effect p-6 rounded-xl hover:scale-105 transition-transform duration-300"
+                  data-aos="fade-up"
+                  data-aos-delay={600 + index * 100}
                 >
                   <div className="flex-shrink-0">
                     <div className="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
@@ -183,7 +185,7 @@ const Contact = () => {
             </div>
 
             {/* Additional CTA */}
-            <div className="glass-effect p-6 rounded-xl text-center">
+            <div className="glass-effect p-6 rounded-xl text-center" data-aos="fade-up" data-aos-delay="900">
               <h4 className="text-white font-semibold mb-2">Need Immediate Assistance?</h4>
               <p className="text-blue-100 text-sm mb-4">
                 Our AI experts are available for emergency consultations and urgent project requirements.

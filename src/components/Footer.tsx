@@ -46,7 +46,7 @@ const Footer = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid lg:grid-cols-4 gap-12">
           {/* Brand Section */}
-          <div className="lg:col-span-1 space-y-6">
+          <div className="lg:col-span-1 space-y-6" data-aos="fade-up" data-aos-delay="100">
             <div className="flex items-center space-x-3">
               <div className="relative">
                 <Brain className="h-8 w-8 text-accent animate-pulse-slow" />
@@ -78,7 +78,7 @@ const Footer = () => {
 
           {/* Links Sections */}
           <div className="lg:col-span-3 grid md:grid-cols-3 gap-8">
-            <div>
+            <div data-aos="fade-up" data-aos-delay="200">
               <h3 className="text-white font-semibold mb-4">Company</h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
@@ -94,7 +94,7 @@ const Footer = () => {
               </ul>
             </div>
             
-            <div>
+            <div data-aos="fade-up" data-aos-delay="300">
               <h3 className="text-white font-semibold mb-4">Services</h3>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
@@ -110,7 +110,7 @@ const Footer = () => {
               </ul>
             </div>
             
-            <div>
+            <div data-aos="fade-up" data-aos-delay="400">
               <h3 className="text-white font-semibold mb-4">Resources</h3>
               <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
@@ -129,19 +129,21 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-white/10">
+        <div className="mt-12 pt-8 border-t border-white/10" data-aos="fade-up" data-aos-delay="500">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-blue-100 text-sm">
               © {currentYear} NeuralTech. All rights reserved. Building the future with AI.
             </div>
             
             <div className="flex items-center space-x-6">
-              {socialLinks.map((social) => (
+              {socialLinks.map((social, index) => (
                 <a
                   key={social.label}
                   href={social.href}
                   className="text-blue-100 hover:text-accent transition-colors"
                   aria-label={social.label}
+                  data-aos="zoom-in"
+                  data-aos-delay={600 + index * 100}
                 >
                   <social.icon className="h-5 w-5" />
                 </a>
