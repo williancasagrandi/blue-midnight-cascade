@@ -1,28 +1,31 @@
 
 import React from 'react';
 import { Monitor, MessageSquare, BarChart3, Globe } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Solutions = () => {
+  const { t } = useLanguage();
+
   const solutions = [
     {
       icon: Monitor,
-      title: "End-to-End Development",
-      description: "Complete project lifecycle management from conception to deployment with ongoing support and maintenance."
+      title: t('solutions.development.title'),
+      description: t('solutions.development.description')
     },
     {
       icon: MessageSquare,
-      title: "AI Chatbot Integration",
-      description: "Intelligent conversational AI that provides 24/7 customer support with advanced natural language processing."
+      title: t('solutions.chatbot.title'),
+      description: t('solutions.chatbot.description')
     },
     {
       icon: BarChart3,
-      title: "Business Intelligence",
-      description: "Advanced analytics and reporting systems that provide real-time insights for data-driven decision making."
+      title: t('solutions.business.title'),
+      description: t('solutions.business.description')
     },
     {
       icon: Globe,
-      title: "Global Scalability",
-      description: "Cloud-native solutions designed to scale globally with enterprise-grade security and performance."
+      title: t('solutions.scalability.title'),
+      description: t('solutions.scalability.description')
     }
   ];
 
@@ -38,13 +41,11 @@ const Solutions = () => {
           <div className="space-y-8">
             <div>
               <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-                Innovation at
-                <span className="text-gradient block">Every Step</span>
+                {t('solutions.title')}
+                <span className="text-gradient block">{t('solutions.titleHighlight')}</span>
               </h2>
               <p className="text-xl text-blue-100 leading-relaxed">
-                Discover cutting-edge AI solutions that transform how businesses operate. 
-                Our innovative approach combines advanced technology with practical implementation 
-                to deliver measurable results.
+                {t('solutions.subtitle')}
               </p>
             </div>
 
@@ -79,7 +80,7 @@ const Solutions = () => {
               {/* Mock Interface */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <div className="text-white font-semibold">AI Dashboard</div>
+                  <div className="text-white font-semibold">{t('solutions.dashboard')}</div>
                   <div className="flex space-x-2">
                     <div className="w-3 h-3 bg-red-400 rounded-full"></div>
                     <div className="w-3 h-3 bg-yellow-400 rounded-full"></div>
@@ -91,7 +92,7 @@ const Solutions = () => {
                 
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
-                    <span className="text-blue-100 text-sm">Model Accuracy</span>
+                    <span className="text-blue-100 text-sm">{t('solutions.accuracy')}</span>
                     <span className="text-accent font-bold">98.7%</span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-2">
@@ -99,7 +100,7 @@ const Solutions = () => {
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-blue-100 text-sm">Processing Speed</span>
+                    <span className="text-blue-100 text-sm">{t('solutions.speed')}</span>
                     <span className="text-accent font-bold">2.3ms</span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-2">
@@ -107,7 +108,7 @@ const Solutions = () => {
                   </div>
                   
                   <div className="flex items-center justify-between">
-                    <span className="text-blue-100 text-sm">Uptime</span>
+                    <span className="text-blue-100 text-sm">{t('solutions.uptime')}</span>
                     <span className="text-accent font-bold">99.9%</span>
                   </div>
                   <div className="w-full bg-white/10 rounded-full h-2">
@@ -116,13 +117,13 @@ const Solutions = () => {
                 </div>
                 
                 <div className="mt-6 p-4 bg-accent/10 rounded-lg">
-                  <div className="text-white text-sm font-medium mb-2">Real-time Analysis</div>
+                  <div className="text-white text-sm font-medium mb-2">{t('solutions.analysis')}</div>
                   <div className="text-blue-100 text-xs">
-                    Processing 1.2M data points per second...
+                    {t('solutions.processing')}
                   </div>
                   <div className="flex items-center mt-2">
                     <div className="w-2 h-2 bg-accent rounded-full animate-pulse mr-2"></div>
-                    <span className="text-accent text-xs">Active</span>
+                    <span className="text-accent text-xs">{t('solutions.active')}</span>
                   </div>
                 </div>
               </div>

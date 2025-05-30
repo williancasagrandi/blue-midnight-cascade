@@ -1,9 +1,11 @@
 
 import React from 'react';
 import { Brain, Mail, Phone, MapPin, Github, Twitter, Linkedin } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   const socialLinks = [
     { icon: Github, href: '#', label: 'GitHub' },
@@ -13,22 +15,22 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { name: 'About Us', href: '#about' },
-      { name: 'Our Team', href: '#team' },
-      { name: 'Careers', href: '#careers' },
-      { name: 'Contact', href: '#contact' }
+      { name: t('footer.aboutUs'), href: '#about' },
+      { name: t('footer.team'), href: '#team' },
+      { name: t('footer.careers'), href: '#careers' },
+      { name: t('nav.contact'), href: '#contact' }
     ],
     services: [
-      { name: 'AI Development', href: '#services' },
-      { name: 'Machine Learning', href: '#services' },
-      { name: 'Data Analytics', href: '#services' },
-      { name: 'Consulting', href: '#services' }
+      { name: t('footer.aiDevelopment'), href: '#services' },
+      { name: t('footer.machineLearning'), href: '#services' },
+      { name: t('footer.dataAnalytics'), href: '#services' },
+      { name: t('footer.consulting'), href: '#services' }
     ],
     resources: [
-      { name: 'Documentation', href: '#docs' },
-      { name: 'Case Studies', href: '#cases' },
-      { name: 'Blog', href: '#blog' },
-      { name: 'Support', href: '#support' }
+      { name: t('footer.documentation'), href: '#docs' },
+      { name: t('footer.caseStudies'), href: '#cases' },
+      { name: t('footer.blog'), href: '#blog' },
+      { name: t('footer.supportFooter'), href: '#support' }
     ]
   };
 
@@ -56,8 +58,7 @@ const Footer = () => {
             </div>
             
             <p className="text-blue-100 leading-relaxed">
-              Pioneering the future of artificial intelligence with innovative solutions 
-              that transform businesses and drive digital evolution.
+              {t('footer.description')}
             </p>
             
             <div className="space-y-3">
@@ -79,7 +80,7 @@ const Footer = () => {
           {/* Links Sections */}
           <div className="lg:col-span-3 grid md:grid-cols-3 gap-8">
             <div data-aos="fade-up" data-aos-delay="200">
-              <h3 className="text-white font-semibold mb-4">Company</h3>
+              <h3 className="text-white font-semibold mb-4">{t('footer.company')}</h3>
               <ul className="space-y-3">
                 {footerLinks.company.map((link) => (
                   <li key={link.name}>
@@ -95,7 +96,7 @@ const Footer = () => {
             </div>
             
             <div data-aos="fade-up" data-aos-delay="300">
-              <h3 className="text-white font-semibold mb-4">Services</h3>
+              <h3 className="text-white font-semibold mb-4">{t('nav.services')}</h3>
               <ul className="space-y-3">
                 {footerLinks.services.map((link) => (
                   <li key={link.name}>
@@ -111,7 +112,7 @@ const Footer = () => {
             </div>
             
             <div data-aos="fade-up" data-aos-delay="400">
-              <h3 className="text-white font-semibold mb-4">Resources</h3>
+              <h3 className="text-white font-semibold mb-4">{t('footer.resources')}</h3>
               <ul className="space-y-3">
                 {footerLinks.resources.map((link) => (
                   <li key={link.name}>
@@ -132,7 +133,7 @@ const Footer = () => {
         <div className="mt-12 pt-8 border-t border-white/10" data-aos="fade-up" data-aos-delay="500">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-blue-100 text-sm">
-              © {currentYear} NeuralTech. All rights reserved. Building the future with AI.
+              © {currentYear} {t('footer.copyright')}
             </div>
             
             <div className="flex items-center space-x-6">

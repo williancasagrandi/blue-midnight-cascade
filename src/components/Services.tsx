@@ -1,38 +1,41 @@
 
 import React from 'react';
 import { Brain, Code, Database, Shield, Cpu, Zap } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Services = () => {
+  const { t } = useLanguage();
+
   const services = [
     {
       icon: Brain,
-      title: "Machine Learning Solutions",
-      description: "Advanced ML algorithms to transform your data into actionable insights and automated decision-making systems."
+      title: t('services.ml.title'),
+      description: t('services.ml.description')
     },
     {
       icon: Code,
-      title: "Custom AI Development", 
-      description: "Tailored artificial intelligence solutions designed specifically for your business needs and objectives."
+      title: t('services.ai.title'), 
+      description: t('services.ai.description')
     },
     {
       icon: Database,
-      title: "Data Analytics Platform",
-      description: "Comprehensive data processing and analysis tools to unlock the hidden potential in your business data."
+      title: t('services.data.title'),
+      description: t('services.data.description')
     },
     {
       icon: Shield,
-      title: "AI Security & Ethics",
-      description: "Robust security frameworks and ethical AI practices to ensure responsible technology deployment."
+      title: t('services.security.title'),
+      description: t('services.security.description')
     },
     {
       icon: Cpu,
-      title: "Neural Networks",
-      description: "Deep learning architectures that can recognize patterns, make predictions, and automate complex tasks."
+      title: t('services.neural.title'),
+      description: t('services.neural.description')
     },
     {
       icon: Zap,
-      title: "Process Automation",
-      description: "Intelligent automation solutions that streamline operations and increase efficiency across your organization."
+      title: t('services.automation.title'),
+      description: t('services.automation.description')
     }
   ];
 
@@ -41,11 +44,10 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            What We <span className="text-gradient">Deliver</span>
+            {t('services.title')} <span className="text-gradient">{t('services.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Comprehensive AI solutions that drive innovation and transform businesses 
-            across industries with cutting-edge technology.
+            {t('services.subtitle')}
           </p>
         </div>
 

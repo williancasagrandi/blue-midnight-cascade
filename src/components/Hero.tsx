@@ -2,8 +2,11 @@
 import React from 'react';
 import { ArrowRight, Cpu, Zap, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t } = useLanguage();
+
   return (
     <section id="home" className="min-h-screen bg-tech-gradient relative overflow-hidden">
       {/* Background Effects */}
@@ -17,22 +20,21 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight">
-                Future of
-                <span className="text-gradient block">AI Innovation</span>
+                {t('hero.title')}
+                <span className="text-gradient block">{t('hero.titleHighlight')}</span>
               </h1>
               <p className="text-xl text-blue-100 max-w-lg">
-                We are more than technology partners. We are your strategic allies in 
-                digital transformation and cutting-edge AI solutions.
+                {t('hero.subtitle')}
               </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-4 rounded-full text-lg transition-all duration-300 hover:scale-105 group">
-                Start Your Journey
+                {t('hero.startJourney')}
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-primary px-8 py-4 rounded-full text-lg transition-all duration-300">
-                Learn More
+                {t('hero.learnMore')}
               </Button>
             </div>
 
@@ -40,15 +42,15 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-6 pt-8">
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent">500+</div>
-                <div className="text-blue-200 text-sm">Projects Delivered</div>
+                <div className="text-blue-200 text-sm">{t('hero.projects')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent">98%</div>
-                <div className="text-blue-200 text-sm">Client Satisfaction</div>
+                <div className="text-blue-200 text-sm">{t('hero.satisfaction')}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-accent">24/7</div>
-                <div className="text-blue-200 text-sm">Support Available</div>
+                <div className="text-blue-200 text-sm">{t('hero.support')}</div>
               </div>
             </div>
           </div>

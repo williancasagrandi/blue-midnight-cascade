@@ -2,16 +2,19 @@
 import React, { useState } from 'react';
 import { Menu, X, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSelector from './LanguageSelector';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const navigation = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'Solutions', href: '#solutions' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.solutions'), href: '#solutions' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.contact'), href: '#contact' }
   ];
 
   return (
@@ -43,10 +46,11 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:block" data-aos="fade-left" data-aos-delay="300">
+          {/* Language Selector and CTA */}
+          <div className="hidden md:flex items-center space-x-4" data-aos="fade-left" data-aos-delay="300">
+            <LanguageSelector />
             <Button className="bg-accent hover:bg-accent/90 text-primary font-semibold px-6 py-2 rounded-full transition-all duration-300 hover:scale-105">
-              Get Started
+              {t('nav.getStarted')}
             </Button>
           </div>
 
@@ -75,9 +79,10 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
-              <div className="px-3 py-2">
-                <Button className="w-full bg-accent hover:bg-accent/90 text-primary font-semibold">
-                  Get Started
+              <div className="px-3 py-2 flex items-center justify-between">
+                <LanguageSelector />
+                <Button className="bg-accent hover:bg-accent/90 text-primary font-semibold">
+                  {t('nav.getStarted')}
                 </Button>
               </div>
             </div>

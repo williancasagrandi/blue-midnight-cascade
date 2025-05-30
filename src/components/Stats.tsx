@@ -1,32 +1,35 @@
 
 import React from 'react';
 import { TrendingUp, Users, Award, Clock } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Stats = () => {
+  const { t } = useLanguage();
+
   const stats = [
     {
       icon: TrendingUp,
       value: "+150%",
-      label: "Performance Improvement",
-      description: "Average efficiency gain"
+      label: t('stats.performance'),
+      description: t('stats.performanceDesc')
     },
     {
       icon: Users,
       value: "500+",
-      label: "Global Clients",
-      description: "Trusted worldwide"
+      label: t('stats.clients'),
+      description: t('stats.clientsDesc')
     },
     {
       icon: Award,
       value: "99.2%",
-      label: "Success Rate",
-      description: "Project completion"
+      label: t('stats.success'),
+      description: t('stats.successDesc')
     },
     {
       icon: Clock,
       value: "24/7",
-      label: "Support Available",
-      description: "Round-the-clock assistance"
+      label: t('stats.supportTitle'),
+      description: t('stats.supportDesc')
     }
   ];
 
@@ -44,11 +47,10 @@ const Stats = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-6xl font-bold text-white mb-6">
-            Results That <span className="text-gradient">Matter</span>
+            {t('stats.title')} <span className="text-gradient">{t('stats.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Our commitment to excellence is reflected in the measurable impact 
-            we deliver to businesses across the globe.
+            {t('stats.subtitle')}
           </p>
         </div>
 
@@ -90,13 +92,13 @@ const Stats = () => {
         <div className="text-center mt-16">
           <div className="glass-effect inline-block p-8 rounded-2xl">
             <h3 className="text-2xl font-bold text-white mb-4">
-              Ready to Transform Your Business?
+              {t('stats.cta.title')}
             </h3>
             <p className="text-blue-100 mb-6 max-w-md">
-              Join hundreds of companies that have already revolutionized their operations with our AI solutions.
+              {t('stats.cta.subtitle')}
             </p>
             <button className="bg-accent hover:bg-accent/90 text-primary font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
-              Start Your Journey Today
+              {t('stats.cta.button')}
             </button>
           </div>
         </div>
